@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:provider/provider.dart';
+import 'package:showcase/config/providers/book_data_provider.dart';
 
-import '../config/providers/book_data_provider.dart';
 import '../config/routes/app_routes.dart';
 import '../ui/pages/home_page.dart';
 import '../utils/bc_theme_model.dart';
@@ -62,7 +62,7 @@ class MyAppShowcase extends ConsumerWidget {
           case (AppRoutes.homePage):
             return MaterialPageRoute(
               builder: ((context) => HomePage(
-                bookDetailList: ref.watch(bookDataProvider).getBookData()
+                bookDetailList: ref.watch(bookDataProvider).getBookData(),
               ))
             );
           default:

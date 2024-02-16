@@ -4,10 +4,13 @@ import 'package:http/http.dart' as http;
 import 'errors/book_data_api_error.dart';
 
 class BookDataApi extends BookDataGateway {
+  final String searchParam;
+
+  BookDataApi({this.searchParam = 'flutter'});
+
   @override
   Future<List<BookDetail>> getBookData() async {
-    String variable = "mac";
-    Uri url = Uri.parse('https://api.itbook.store/1.0/search/$variable');
+    Uri url = Uri.parse('https://api.itbook.store/1.0/search/$searchParam');
     final response = await http.get(url);
     if (response.statusCode == 200) {
       final bookData = bookDataFromJson(response.body);

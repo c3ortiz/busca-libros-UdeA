@@ -37,7 +37,7 @@ class DetailPage extends StatelessWidget {
             Text(bookDetail.title!,
                 style: const TextStyle(fontSize: 25),
                 textAlign: TextAlign.center),
-            Text(bookDetail.subtitle!),
+            Text(bookDetail.subtitle!, textAlign: TextAlign.center),
             const SizedBox(
               height: 20,
             ),
