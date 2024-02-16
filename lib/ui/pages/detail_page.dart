@@ -27,21 +27,24 @@ class DetailPage extends StatelessWidget {
           ),
         ),
       ),
-      Column(children: [
-        Image.network(bookDetail.image!),
-        const SizedBox(
-          height: 20,
-        ),
-        Text(bookDetail.title!,
-            style: const TextStyle(fontSize: 25), textAlign: TextAlign.center),
-        Text(bookDetail.subtitle!),
-        const SizedBox(
-          height: 20,
-        ),
-        Text('ISBN: ${bookDetail.isbn13!}'),
-        Text('Price: ${bookDetail.price!}'),
-        Text('URL: ${bookDetail.url!}')
-      ])
+      Padding(
+          padding: const EdgeInsets.only(left: 25, right: 25),
+          child: Column(children: [
+            Image.network(bookDetail.image!),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(bookDetail.title!,
+                style: const TextStyle(fontSize: 25),
+                textAlign: TextAlign.center),
+            Text(bookDetail.subtitle!),
+            const SizedBox(
+              height: 20,
+            ),
+            Text('ISBN: ${bookDetail.isbn13!}'),
+            Text('Price: ${bookDetail.price!}'),
+            Text('URL: ${bookDetail.url!}')
+          ]))
     ])));
   }
 }
